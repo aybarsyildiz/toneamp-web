@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=JetBrains+Mono:wght@500&display=swap');
+  * { margin: 0; box-sizing: border-box; }
+  html, body { width: 1200px; height: 630px; }
+  body {
+    background: radial-gradient(120% 130% at 20% 0%, #14100b 0%, #0a0908 55%, #060505 100%);
+    color: #f1ece1;
+    font-family: 'Space Grotesk', sans-serif;
+    padding: 74px 80px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+    overflow: hidden;
+  }
+  .scope {
+    position: absolute;
+    left: 0; right: 0; top: 55%;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, #38d6c4 20%, #ffb24a 55%, #ff3b2f 85%, transparent);
+    filter: blur(0.4px);
+    opacity: 0.85;
+  }
+  .scope::after {
+    content: ""; position: absolute; inset: -60px 0;
+    background: radial-gradient(60% 100% at 70% 50%, rgba(255,106,26,0.18), transparent 70%);
+  }
+  .brand { display: flex; align-items: center; gap: 16px; font-size: 30px; font-weight: 600; letter-spacing: -0.02em; z-index: 2; }
+  .mark { width: 40px; height: 40px; border-radius: 11px; background: conic-gradient(from -60deg, #ff3b2f, #ff6a1a, #ffb24a, #ff6a1a); position: relative; box-shadow: 0 0 28px rgba(255,106,26,0.5); }
+  .mark::after { content:""; position:absolute; inset:9px; border-radius:50%; background:#0a0908; }
+  .mark::before { content:""; position:absolute; left:50%; top:50%; width:3px; height:13px; background:#f1ece1; transform: translate(-50%,-95%) rotate(38deg); transform-origin: bottom center; z-index:2; border-radius:2px; }
+  h1 { font-size: 104px; font-weight: 700; line-height: 0.95; letter-spacing: -0.045em; z-index: 2; }
+  h1 .tint { background: linear-gradient(100deg, #ffb24a, #ff6a1a, #ff3b2f); -webkit-background-clip: text; background-clip: text; color: transparent; }
+  .sub { font-size: 30px; color: rgba(241,236,225,0.62); max-width: 760px; margin-top: 26px; z-index: 2; }
+  .foot { display: flex; justify-content: space-between; align-items: center; z-index: 2; }
+  .tags { font-family: 'JetBrains Mono', monospace; font-size: 20px; letter-spacing: 0.14em; text-transform: uppercase; color: rgba(241,236,225,0.5); }
+  .pill { font-family: 'JetBrains Mono', monospace; font-size: 19px; letter-spacing: 0.1em; color: #0a0908; background: #ff6a1a; padding: 12px 22px; border-radius: 100px; text-transform: uppercase; }
+</style>
+</head>
+<body>
+  <div class="scope"></div>
+  <div class="brand"><span class="mark"></span> ToneAmp</div>
+  <div>
+    <h1>Every song's tone.<br /><span class="tint">Dialed in.</span></h1>
+    <p class="sub">Real amp settings, knob positions and pedal chains for 1,300+ songs — then AI adapts any tone to your exact gear.</p>
+  </div>
+  <div class="foot">
+    <div class="tags">1,380 songs · Rock · Metal · Blues · TR + EN</div>
+    <div class="pill">iOS · App Store</div>
+  </div>
+</body>
+</html>

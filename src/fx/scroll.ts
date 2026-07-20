@@ -1,14 +1,13 @@
 import Lenis from 'lenis';
 import gsap from 'gsap';
 import { state, reducedMotion } from '../state';
-import type { ToneEngine } from './audio';
 
 /**
  * Smooth scroll + the gain loop. Page progress drives an eased `state.gain`
- * (0..1) that the WebGL scene, HUD meter, and audio all read. Also counts up
- * the hero stats and rotates the amp knobs when they enter view.
+ * (0..1) that the WebGL scene and HUD meter read. Also counts up the hero
+ * stats and rotates the amp knobs when they enter view.
  */
-export function initScroll(engine: ToneEngine) {
+export function initScroll() {
   const lenis = new Lenis({
     duration: 1.1,
     easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
@@ -32,7 +31,6 @@ export function initScroll(engine: ToneEngine) {
     state.gain += (targetGain - state.gain) * (reducedMotion ? 1 : 0.08);
     if (gainNum) gainNum.textContent = (state.gain * 10).toFixed(1);
     if (gainFill) gainFill.style.width = `${state.gain * 100}%`;
-    engine.update();
     requestAnimationFrame(raf);
   };
   requestAnimationFrame(raf);
@@ -52,7 +50,7 @@ function initCounters() {
         const target = parseInt(el.dataset.count || '0', 10);
         io.unobserve(el);
         if (reducedMotion) {
-          el.textContent = target.toLocaleString();
+          el.textContent = target.toLocaleString('en-US');
           continue;
         }
         const obj = { v: 0 };
@@ -61,7 +59,7 @@ function initCounters() {
           duration: 1.8,
           ease: 'power2.out',
           onUpdate: () => {
-            el.textContent = Math.floor(obj.v).toLocaleString();
+            el.textContent = Math.floor(obj.v).toLocaleString('en-US');
           },
         });
       }
