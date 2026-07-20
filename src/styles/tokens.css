@@ -1,0 +1,65 @@
+/* ============================================================
+   ToneAmp — design tokens
+   Warm valve dark. Clean-teal → amber → hot-orange, the way
+   gain climbs a signal chain. Swiss-technical, tube-warm.
+   ============================================================ */
+
+:root {
+  /* Ground */
+  --ground: #0a0908;          /* warm near-black page */
+  --ground-raise: #12100d;    /* raised panels */
+  --ground-sink: #060505;     /* deepest wells */
+
+  /* Ink */
+  --bone: #f1ece1;            /* primary text */
+  --bone-dim: rgba(241, 236, 225, 0.58);
+  --bone-faint: rgba(241, 236, 225, 0.30);
+  --bone-ghost: rgba(241, 236, 225, 0.12);
+
+  /* Signal — the gain gradient */
+  --clean: #38d6c4;           /* clean tone, low gain */
+  --amber: #ffb24a;           /* valve glow, mid gain */
+  --accent: #ff6a1a;          /* signal orange — the brand */
+  --hot: #ff3b2f;             /* high gain / fuzz */
+  --accent-soft: rgba(255, 106, 26, 0.14);
+  --accent-glow: rgba(255, 106, 26, 0.42);
+
+  /* Lines */
+  --line: rgba(241, 236, 225, 0.12);
+  --line-strong: rgba(241, 236, 225, 0.26);
+
+  /* Typography */
+  --font-display: 'Space Grotesk Variable', 'Space Grotesk', 'Helvetica Neue', Arial, sans-serif;
+  --font-mono: 'JetBrains Mono Variable', 'JetBrains Mono', 'SF Mono', 'Menlo', monospace;
+
+  /* Fluid type scale */
+  --text-mega: clamp(3.4rem, 14vw, 15rem);
+  --text-hero: clamp(2.8rem, 9vw, 8.5rem);
+  --text-display: clamp(2rem, 5.5vw, 5rem);
+  --text-title: clamp(1.5rem, 3.2vw, 2.9rem);
+  --text-lede: clamp(1.05rem, 1.55vw, 1.4rem);
+  --text-body: clamp(0.95rem, 1.1vw, 1.05rem);
+  --text-mono: clamp(0.62rem, 0.82vw, 0.74rem);
+
+  /* Spacing & layout */
+  --gutter: clamp(1.25rem, 4vw, 4.5rem);
+  --section-pad: clamp(6rem, 16vh, 11rem);
+  --header-h: 4.25rem;
+  --maxw: 1500px;
+
+  /* Motion */
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-inout: cubic-bezier(0.83, 0, 0.17, 1);
+  --dur-fast: 0.35s;
+  --dur: 0.6s;
+  --dur-slow: 1s;
+
+  /* Z layers */
+  --z-stage: 0;
+  --z-grain: 1;
+  --z-content: 2;
+  --z-header: 20;
+  --z-menu: 30;
+  --z-preloader: 50;
+  --z-cursor: 60;
+}

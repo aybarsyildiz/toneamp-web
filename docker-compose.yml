@@ -1,0 +1,22 @@
+# ToneAmp marketing site — static nginx behind the existing kimlix traefik.
+# Independent compose project; only shares the kimlix_web network.
+services:
+  site:
+    image: nginx:1.27-alpine
+    restart: unless-stopped
+    volumes:
+      - ./dist:/usr/share/nginx/html:ro
+      - ./nginx.conf:/etc/nginx/conf.d/default.conf:ro
+    networks:
+      - kimlix_web
+    labels:
+      - traefik.enable=true
+      - traefik.docker.network=kimlix_web
+      - traefik.http.routers.toneamp.rule=Host(`toneamp.netnucleus.solutions`)
+      - traefik.http.routers.toneamp.entrypoints=websecure
+      - traefik.http.routers.toneamp.tls.certresolver=le
+      - traefik.http.services.toneamp.loadbalancer.server.port=80
+
+networks:
+  kimlix_web:
+    external: true

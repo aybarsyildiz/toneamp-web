@@ -1,0 +1,242 @@
+<!doctype html>
+<html lang="en" class="no-js">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <title>ToneAmp — Every song's tone, dialed in</title>
+  <meta name="description" content="1,300+ songs with real amp settings, exact knob positions, and every pedal in the chain. Identify any song, browse community tones, and let AI adapt any tone to your exact gear. For guitarists." />
+  <meta name="theme-color" content="#0a0908" />
+  <link rel="canonical" href="https://toneamp.netnucleus.solutions/" />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="ToneAmp — Every song's tone, dialed in" />
+  <meta property="og:description" content="Real amp settings and pedal chains for 1,300+ songs. Identify any song, then let AI adapt its tone to your exact rig." />
+  <meta property="og:url" content="https://toneamp.netnucleus.solutions/" />
+  <meta property="og:image" content="./shots/04.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%23ff6a1a'/%3E%3Ccircle cx='16' cy='16' r='9' fill='%230a0908'/%3E%3Crect x='15' y='6' width='2' height='7' rx='1' fill='%23f1ece1' transform='rotate(38 16 16)'/%3E%3C/svg%3E" />
+</head>
+<body>
+  <script>document.documentElement.classList.remove('no-js');</script>
+
+  <!-- WebGL oscilloscope stage -->
+  <div id="stage" aria-hidden="true"></div>
+  <div class="grain" aria-hidden="true"></div>
+  <div class="vignette" aria-hidden="true"></div>
+  <div class="cursor" aria-hidden="true"></div>
+
+  <!-- Preloader -->
+  <div class="preloader" id="preloader" aria-hidden="true">
+    <div class="pre-inner">
+      <div class="pre-label mono"><span>TONEAMP</span><span>SIGNAL CHAIN</span></div>
+      <div class="pre-scope"><i id="pre-bar"></i></div>
+      <div class="pre-pct"><span id="pre-pct">0</span>%</div>
+    </div>
+  </div>
+
+  <!-- Header -->
+  <header class="header">
+    <a class="brand" href="#top" aria-label="ToneAmp home">
+      <span class="mark" aria-hidden="true"></span>
+      ToneAmp
+    </a>
+    <div class="header-right mono">
+      <button class="sound-toggle" id="sound-toggle" aria-pressed="false" aria-label="Toggle sound">
+        <span class="bars" aria-hidden="true"><i></i><i></i><i></i><i></i></span>
+        <span class="st-text">Sound Off</span>
+      </button>
+      <a class="nav-cta" href="#get">Get the App</a>
+    </div>
+  </header>
+
+  <main id="top">
+    <!-- HERO -->
+    <section class="hero wrap" id="hero">
+      <h1 class="reveal" data-split>Every song's tone.<br /><span class="tint">Dialed in.</span></h1>
+      <p class="lede fade">Real amp settings, exact knob positions, and every pedal in the chain — for over 1,300 songs. Then AI translates any tone onto your exact rig.</p>
+      <div class="hero-actions fade">
+        <a class="appstore" href="#get" aria-label="Download ToneAmp on the App Store">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17.05 12.04c-.02-2.3 1.88-3.4 1.96-3.46-1.07-1.56-2.73-1.78-3.32-1.8-1.41-.14-2.75.83-3.47.83-.72 0-1.82-.81-3-.79-1.54.02-2.96.9-3.75 2.28-1.6 2.78-.41 6.9 1.15 9.16.76 1.1 1.67 2.35 2.86 2.3 1.15-.05 1.58-.74 2.97-.74 1.38 0 1.78.74 3 .72 1.24-.02 2.02-1.13 2.78-2.24.88-1.29 1.24-2.53 1.26-2.6-.03-.01-2.42-.93-2.44-3.69zM14.77 5.3c.63-.77 1.06-1.83.94-2.9-.91.04-2.02.61-2.68 1.37-.59.68-1.11 1.77-.97 2.81 1.02.08 2.07-.52 2.71-1.28z"/></svg>
+          <span class="as-text"><small>Coming soon on the</small><b>App Store</b></span>
+        </a>
+        <a class="btn btn-ghost" href="#chain">See how it works</a>
+      </div>
+      <div class="hero-meta fade">
+        <div><b data-count="1380">0</b><span class="mono">Songs</span></div>
+        <div><b data-count="1959">0</b><span class="mono">Tones</span></div>
+        <div><b data-count="64">0</b><span class="mono">Pedal models</span></div>
+        <div><b>TR&nbsp;+&nbsp;EN</b><span class="mono">Rock · Metal · Blues</span></div>
+      </div>
+    </section>
+
+    <!-- CHAIN -->
+    <section class="chain wrap" id="chain">
+      <div class="section-head">
+        <h2 class="reveal" data-split>Follow the signal.</h2>
+        <p class="fade">Scroll and the tone climbs its own gain stage — clean, to crunch, to a wall of fuzz. That's the whole app in one gesture: from a song's real recipe to the sound in your hands.</p>
+      </div>
+      <div class="chain-track fade">
+        <div class="chain-node"><div class="cn-idx">01 · CLEAN</div><h3>Guitar</h3><p>Pick your rig — any guitar, from a PRS SE to a Strat.</p></div>
+        <div class="chain-node"><div class="cn-idx">02 · CRUNCH</div><h3>Pedals</h3><p>The exact chain, in order, with real control values.</p></div>
+        <div class="chain-node"><div class="cn-idx">03 · DRIVE</div><h3>Amp</h3><p>Gain, bass, mid, treble, presence — dialed to the record.</p></div>
+        <div class="chain-node"><div class="cn-idx">04 · FUZZ</div><h3>Your Sound</h3><p>AI adapts it all to the gear you actually own.</p></div>
+      </div>
+    </section>
+
+    <!-- LIBRARY -->
+    <section class="library wrap" id="library">
+      <div class="section-head">
+        <span class="eyebrow mono">The Library</span>
+        <div></div>
+        <h2 class="reveal" data-split>1,380 songs. Real settings.</h2>
+        <p class="fade">Every song gets a researched tone sheet — the amp, exact knob positions, guitar and pickup, and every pedal in the chain with its settings. International and Turkish rock, metal, blues and more.</p>
+      </div>
+      <div class="lib-grid">
+        <div class="amp-panel fade" id="amp-panel">
+          <div class="ap-head"><b>Comfortably Numb</b><span class="mono">SOLO · LEAD</span></div>
+          <div class="knob-row">
+            <div class="knob-wrap"><div class="knob" data-knob="7.5"></div><div class="knob-val">7.5</div><div class="knob-name mono">Gain</div></div>
+            <div class="knob-wrap"><div class="knob" data-knob="6"></div><div class="knob-val">6.0</div><div class="knob-name mono">Bass</div></div>
+            <div class="knob-wrap"><div class="knob" data-knob="7"></div><div class="knob-val">7.0</div><div class="knob-name mono">Treble</div></div>
+          </div>
+          <div class="pedal-row">
+            <span class="pedal-chip on">Big Muff Pi</span>
+            <span class="pedal-chip on">EHX Electric Mistress</span>
+            <span class="pedal-chip on">MXR Carbon Copy</span>
+            <span class="pedal-chip">Hiwatt DR103</span>
+          </div>
+        </div>
+        <div class="lib-copy">
+          <ul class="feat-list">
+            <li><span class="fi">01</span><div><b>Every knob, not a vibe.</b><span>Gain, bass, mid, treble, presence and reverb — with numbers you can actually dial.</span></div></li>
+            <li><span class="fi">02</span><div><b>The whole pedalboard.</b><span>Named commercial pedals in signal order — TS9, Carbon Copy, Big Muff — never a vague "overdrive."</span></div></li>
+            <li><span class="fi">03</span><div><b>Multiple tones per song.</b><span>Clean verse, driven chorus, screaming solo — each captured separately.</span></div></li>
+            <li><span class="fi">04</span><div><b>Contacts-style library.</b><span>A–Z index, genre filters, tone of the day, artwork from Apple's catalog.</span></div></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- IDENTIFY -->
+    <section class="identify wrap" id="identify">
+      <div class="feature">
+        <div class="phone-col fade"><div class="phone"><img src="./shots/03.png" alt="ToneAmp Identify screen listening to a song" loading="lazy" /></div></div>
+        <div class="feature-copy">
+          <span class="pill">Identify</span>
+          <h3 class="reveal" data-split>Hear it. Find it. Play it.</h3>
+          <p class="lede fade">Catch a tone in the wild and identify the song instantly with ShazamKit — then jump straight to its tone sheet. No song in the catalog yet? Generate one.</p>
+          <ol class="steps fade">
+            <li><span class="num">1</span><span>Tap to listen — on-device, powered by Apple's ShazamKit.</span></li>
+            <li><span class="num">2</span><span>Land on the exact recording — artist-verified, never a cover.</span></li>
+            <li><span class="num">3</span><span>Open its tones, or ask the AI to research a fresh one.</span></li>
+          </ol>
+        </div>
+      </div>
+    </section>
+
+    <!-- ADAPT -->
+    <section class="adapt wrap" id="adapt">
+      <div class="feature flip">
+        <div class="phone-col fade"><div class="phone"><img src="./shots/05.png" alt="ToneAmp My Rig signal chain screen" loading="lazy" /></div></div>
+        <div class="feature-copy">
+          <span class="pill">Pro · Adapt to My Gear</span>
+          <h3 class="reveal" data-split>Translated to your gear.</h3>
+          <p class="lede fade">The magic feature. Take any tone and have AI translate it onto your exact equipment — block by block on your multi-FX, knob by knob on your amp, with step-by-step instructions. Play direct into a PC through a modeler? It maps to that too.</p>
+          <ol class="steps fade">
+            <li><span class="num">1</span><span>Build your rig visually — guitar, amp, multi-FX, pedals.</span></li>
+            <li><span class="num">2</span><span>Pick any song's tone from the library or community.</span></li>
+            <li><span class="num">3</span><span>Get a dialed-in version for your gear, saved to keep.</span></li>
+          </ol>
+        </div>
+      </div>
+    </section>
+
+    <!-- COMMUNITY -->
+    <section class="community wrap" id="community">
+      <div class="section-head">
+        <span class="eyebrow mono">Community</span>
+        <div></div>
+        <h2 class="reveal" data-split>Every player hears differently.</h2>
+        <p class="fade">Publish your own version of a song's tone, rate others, and browse the community's takes — filtered by rating, recency, or tone character.</p>
+      </div>
+      <div class="tone-grid fade">
+        <div class="tone-card">
+          <div class="tc-top"><span class="tc-char">High Gain</span></div>
+          <h4>Wall of Doom</h4><div class="tc-song">Tornado of Souls · Megadeth</div>
+          <div class="tc-rating">★★★★★ <span>(48)</span></div><div class="tc-by">by riffwitch</div>
+        </div>
+        <div class="tone-card">
+          <div class="tc-top"><span class="tc-char">Clean</span></div>
+          <h4>Delay Arpej</h4><div class="tc-song">Bir Derdim Var · Mor ve Ötesi</div>
+          <div class="tc-rating">★★★★☆ <span>(31)</span></div><div class="tc-by">by gitarist_07</div>
+        </div>
+        <div class="tone-card">
+          <div class="tc-top"><span class="tc-char">Crunch</span></div>
+          <h4>Alt-Rock Anthem</h4><div class="tc-song">Cambaz · Mor ve Ötesi</div>
+          <div class="tc-rating">★★★★★ <span>(22)</span></div><div class="tc-by">by downstroke</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PRO -->
+    <section class="pro" id="pro">
+      <div class="wrap">
+        <div class="section-head" style="text-align:center; justify-items:center;">
+          <span class="eyebrow mono">ToneAmp Pro</span>
+          <div></div>
+          <h2 class="reveal" data-split style="grid-column:1/-1;">The AI tone engine.</h2>
+          <p class="fade" style="grid-column:1/-1; margin-inline:auto;">Identify Tones and Adapt to My Gear — the AI features — plus your own saved tone library. Start with a 7-day free trial.</p>
+        </div>
+        <div class="price-grid fade">
+          <div class="price-card best">
+            <span class="best-tag">Best value</span>
+            <div class="pc-name mono">Yearly</div>
+            <div class="pc-price">$29.99<small> / year</small></div>
+            <div class="pc-sub mono">≈ $2.50 / mo · 7-day free trial</div>
+          </div>
+          <div class="price-card">
+            <div class="pc-name mono">Monthly</div>
+            <div class="pc-price">$4.99<small> / month</small></div>
+            <div class="pc-sub mono">Cancel anytime</div>
+          </div>
+        </div>
+        <ul class="pro-feats fade">
+          <li><span class="check">✦</span><div><b>Identify Tones.</b> A researched tone sheet for any song — amp, knobs, and pedal chain, in seconds.</div></li>
+          <li><span class="check">✦</span><div><b>Adapt to My Gear.</b> Any tone translated onto your exact rig, step by step.</div></li>
+          <li><span class="check">✦</span><div><b>Your AI tone library.</b> Every result saved per song and rig — yours to keep and republish.</div></li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- FOOTER / GET -->
+    <footer class="footer wrap" id="get">
+      <h2 class="reveal" data-split>Made by a guitarist,<br />for guitarists.</h2>
+      <div class="foot-actions">
+        <a class="appstore" href="https://apps.apple.com/app/id6792555370" target="_blank" rel="noopener" aria-label="Download ToneAmp on the App Store">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17.05 12.04c-.02-2.3 1.88-3.4 1.96-3.46-1.07-1.56-2.73-1.78-3.32-1.8-1.41-.14-2.75.83-3.47.83-.72 0-1.82-.81-3-.79-1.54.02-2.96.9-3.75 2.28-1.6 2.78-.41 6.9 1.15 9.16.76 1.1 1.67 2.35 2.86 2.3 1.15-.05 1.58-.74 2.97-.74 1.38 0 1.78.74 3 .72 1.24-.02 2.02-1.13 2.78-2.24.88-1.29 1.24-2.53 1.26-2.6-.03-.01-2.42-.93-2.44-3.69zM14.77 5.3c.63-.77 1.06-1.83.94-2.9-.91.04-2.02.61-2.68 1.37-.59.68-1.11 1.77-.97 2.81 1.02.08 2.07-.52 2.71-1.28z"/></svg>
+          <span class="as-text"><small>Coming soon on the</small><b>App Store</b></span>
+        </a>
+      </div>
+      <p class="disclaimer">No ads. No tracking. Community tone settings are player-contributed starting points based on interviews, rig rundowns, and ears — dial in from there.</p>
+      <div class="foot-bottom mono">
+        <span>© <span id="year">2026</span> NetNucleus</span>
+        <div class="foot-links">
+          <a href="https://toneamp-proxy.toneamp.workers.dev/privacy" target="_blank" rel="noopener">Privacy</a>
+          <a href="https://toneamp-proxy.toneamp.workers.dev/support" target="_blank" rel="noopener">Support</a>
+          <a href="mailto:s.aybars.yildiz@gmail.com">Contact</a>
+        </div>
+      </div>
+    </footer>
+  </main>
+
+  <!-- HUD -->
+  <div class="hud mono" aria-hidden="true">
+    <span class="gain-label">GAIN <b id="gain-num">0.0</b></span>
+    <span class="gain-track"><span class="gain-fill" id="gain-fill"></span></span>
+  </div>
+  <div class="scrollhint mono" aria-hidden="true"><span>Scroll</span><span class="line"></span></div>
+
+  <script type="module" src="/src/main.ts"></script>
+</body>
+</html>
