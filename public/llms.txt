@@ -44,3 +44,13 @@
 - App Store: https://apps.apple.com/app/id6792555370
 - Privacy: https://toneamp-proxy.toneamp.workers.dev/privacy
 - Support: https://toneamp-proxy.toneamp.workers.dev/support
+
+## Song pages
+
+Every song in the catalog has its own public page with the full tone sheet
+(amp, knob values, guitar and pickup, pedal chain with control values, notes):
+
+- All artists: https://toneamp.netnucleus.solutions/artists/
+- Turkish rock songs: https://toneamp.netnucleus.solutions/tr/sarkilar/
+- Song page pattern: https://toneamp.netnucleus.solutions/songs/<song-id>/
+  (e.g. https://toneamp.netnucleus.solutions/songs/smoke-on-the-water-deep-purple/)
